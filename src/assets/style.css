@@ -92,6 +92,7 @@ nav a {
   text-align: center;
   border-radius: 10px;
   background-color: rgb(243, 239, 239);
+  cursor: pointer;
 }
 
 .product-card img {
@@ -246,7 +247,22 @@ h3 {
 }
 
 
+.details p {
+  line-height: 1.5;
+  padding: 0px 15px;
+}
 
+.details h1 {
+  text-align: center;
+  color: #333;
+  font-size: 60px;
+  margin: 5px 0px;
+}
+
+.details h2 {
+  text-align: center;
+  margin: 5px 0px 20px 0px;
+}
 
 @media (max-width: 1200px) {
   .header nav ul {
