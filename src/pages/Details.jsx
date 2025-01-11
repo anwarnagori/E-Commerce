@@ -20,7 +20,7 @@ const Details = () => {
     <div className="details">
       <div>
         <h1>{product.name}</h1>
-        <button>Adopt {product.name}</button>
+        <button>Buy {product.name}</button>
         <p>{product.description}</p>
       </div>
     </div>
