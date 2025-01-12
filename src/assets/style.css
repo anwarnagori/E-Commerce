@@ -246,22 +246,107 @@ h3 {
   margin: 0;
 }
 
-
-.details p {
-  line-height: 1.5;
-  padding: 0px 15px;
+/* details.css */
+.details {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  font-family: Arial, sans-serif;
 }
 
-.details h1 {
-  text-align: center;
-  color: #333;
-  font-size: 60px;
-  margin: 5px 0px;
+.product-info {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  gap: 20px;
 }
 
-.details h2 {
-  text-align: center;
-  margin: 5px 0px 20px 0px;
+.product-image {
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-details {
+  flex: 1;
+  max-width: 500px;
+}
+
+.product-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.product-description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.product-brand,
+.product-price {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.buy-button {
+  background-color: #008cba;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+  background-color: #006f8e;
+}
+
+.additional-info {
+  margin-top: 40px;
+}
+
+.additional-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.additional-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.additional-info ul li {
+  font-size: 1rem;
+  padding: 5px 0;
+}
+
+.loading-pane {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding: 15px;
+}
+
+.loader {
+  font-size: 100px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.mini.loading-pane {
+  height: 34px;
+}
+
+.mini .loader {
+  font-size: 34px;
 }
 
 @media (max-width: 1200px) {

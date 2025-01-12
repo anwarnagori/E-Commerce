@@ -1,12 +1,11 @@
 const fetchProduct = async ({ queryKey }) => {
-  const id = queryKey[0];
-  const response = await fetch(`https:dummyjson.com/products/${id}`);
-
-  if (!response.ok) {
-    throw new Error(`Product with ID id not found`);
+  console.log("querykey", queryKey);
+  const id = queryKey[1];
+  const apiRes = await fetch(`https://dummyjson.com/products?id=${id}`);
+  if (!apiRes.ok) {
+    throw new Error(`details/${id} fetch not ok`);
   }
-
-  return response.json();
-}
+  return apiRes.json();
+};
 
 export default fetchProduct;

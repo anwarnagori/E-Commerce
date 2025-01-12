@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Middle = () => {
   const [products, setProducts] = useState([]);
@@ -18,6 +19,7 @@ const Middle = () => {
         setLoading(false);
       });
   }, []);
+
   if (loading) return <h2>Loading...</h2>;
 
   if (error) return <h2>Error fetching data: {error.message}</h2>;
@@ -28,12 +30,14 @@ const Middle = () => {
       <div className="product-list">
         {products.map((product) => (
           <div key={product.id} className="product-card">
-            <img src={product.images[0]} alt={product.image} width="100" />
-            <h3>{product.brand}</h3>
-            <p>
-              <strong>Price: </strong>${product.price}
-            </p>
-            <button>Add to card</button>
+            <Link to={`/details/${product.id}`}>
+              <img src={product.images[0]} alt={product.image} width="100" />
+              <h3>{product.brand}</h3>
+              <p>
+                <strong>Price: </strong>${product.price}
+              </p>
+              <button>Add to cart</button>
+            </Link>
           </div>
         ))}
       </div>
