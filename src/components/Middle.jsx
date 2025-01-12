@@ -28,7 +28,7 @@ const Middle = () => {
       <div className="product-list">
         {products.map((product) => (
           <div key={product.id} className="product-card">
-            <img src={product.image} alt={product.image} width="100" />
+            <img src={product.images[0]} alt={product.image} width="100" />
             <h3>{product.brand}</h3>
             <p>
               <strong>Price: </strong>${product.price}
