@@ -4,8 +4,8 @@ import fetchProduct from "../helper/fetchProducts";
 
 const Details = () => {
   const { id } = useParams();
-  const productId = parseInt(id, 10);
-  const { data, isLoading, error } = useQuery([productId], fetchProduct);
+
+  const { data, isLoading, error } = useQuery([id], fetchProduct);
 
   if (isLoading) {
     return (
@@ -18,8 +18,8 @@ const Details = () => {
   if (error) {
     return <div className="error-message">Error loading product details!</div>;
   }
-  
-  const product = data.products.find((product) => product.id === productId);
+
+  const product = data.products.find((product) => product.id.toString() === id);
 
   if (!product) {
     return <div className="error-message">Product not found!</div>;
